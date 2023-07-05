@@ -12,19 +12,19 @@ async def info(ctx):
     await ctx.send(embed=embed)
 
 @client.command(description="Makes me say things. Arguments required. Example: +say Hi")
-async def say(ctx, *, question):
-    await ctx.send(f'{question}')
+async def say(ctx, *, message):
+    await ctx.send(f'{message}')
     await ctx.message.delete()
 
 @client.command(description="Makes me say things in a embed. Arguments required. Example: +esay Hi")
-async def esay(ctx, *, question):
-    embed = voltage.Embed(description=f'{question}', color="#FFA200")
+async def esay(ctx, *, message):
+    embed = voltage.Embed(description=f'{message}', color="#FFA200")
     await ctx.send(embed=embed)
     await ctx.message.delete()
 
 @client.command(description="Masquerade. Arguments required. Example: +commandname Hi")
-async def commandhere(ctx, *, question):
-    await ctx.send(f"{question}", masquerade=voltage.MessageMasquerade(name="NAME_HERE", avatar="IMAGE_URL_HERE"))
+async def commandhere(ctx, *, message):
+    await ctx.send(f"{message}", masquerade=voltage.MessageMasquerade(name="NAME_HERE", avatar="IMAGE_URL_HERE"))
     await ctx.message.delete()
 
 
